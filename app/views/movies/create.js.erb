@@ -1,0 +1,3 @@
+$("#movie_count").html("<%= pluralize(@movie.movies.count, 'movie') %>");
+$("#movies").append("<%= escape_javascript(render(:partial => @movie)) %>");
+$("#new_movie")[0].reset();

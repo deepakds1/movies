@@ -1,0 +1,28 @@
+<%= form_for :movie, url: movies_path do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :realese, "Release Date" %><br>
+      <%= f.text_field :realese %>
+
+    </p>
+
+    <p>
+      <%= f.label :Actor %><br>
+      <%=f.text_field :actor %>
+    </p>
+
+    <p>
+      <%= f.label :Director %><br>
+      <%=f.text_field :director %>
+    </p>
+    <p>
+      <%= f.label :"Rating" %><br>
+      <%=f.text_field :rating %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

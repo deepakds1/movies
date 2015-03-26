@@ -1,0 +1,28 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1{
+  font-size: larger;
+  color: red;
+}
+
+.row{
+  background-color:royalblue ;
+}
+
+//sortable { list-style-type: none; margin: 0; padding: 0; width: 80%; }
+//#sortable li { margin: 0 3px 3px 3px;  font-size: 1.4em; height: 18px; }
+//#sortable li span { position: absolute; margin-left: -1.3em; }
+
+table{
+  border:1px solid #1023e6;
+  width: 80%;
+}
+thead{
+  font-size: larger;
+  background-color: darkgoldenrod;
+}
+tbody{
+  background-color: lavender;
+
+}

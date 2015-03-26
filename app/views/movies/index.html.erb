@@ -1,0 +1,87 @@
+<h1>Movies list of 2015</h1>
+
+
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#myModal">
+  Add New Movie
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Enter Movie Details</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for :movie, url: movies_path do |f| %>
+            <p>
+              <%= f.label :title %><br>
+              <%= f.text_field :name %>
+            </p>
+            <p>
+              <%= f.label :realese, "Release Date" %><br>
+              <%= f.text_field :realese %>
+
+            </p>
+
+            <p>
+              <%= f.label :Actor %><br>
+              <%=f.text_field :actor %>
+            </p>
+
+            <p>
+              <%= f.label :Director %><br>
+              <%=f.text_field :director %>
+            </p>
+            <p>
+              <%= f.label :"Rating" %><br>
+              <%=f.text_field :rating %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Realese year</th>
+    <th>Lead Role</th>
+    <th>Director</th>
+    <th>Rating</th>
+  </tr>
+  </thead>
+
+
+  <tbody id="sortable">
+  <% @movies.each do |t| %>
+      <tr id="<%=t.id%>" >
+        <td><%= t.name %></td>
+        <td><%= t.realese %></td>
+        <td><%= t.actor%></td>
+        <td><%= t.director%></td>
+        <td><%= t.rating%>
+          <div class="rateit" id="rateit">
+          </div>
+        </td></tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<% form_tag movies_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+
+
